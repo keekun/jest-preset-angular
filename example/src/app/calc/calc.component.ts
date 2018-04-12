@@ -2,6 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 const image = require('assets/its_something.png');
 
+import * as window from 'svgdom';
+import * as SVGFactory from 'svg.js';
+
+export const SVG = SVGFactory(window);
+
 @Component({
   selector: 'app-calc',
   template: `
@@ -32,6 +37,7 @@ export class CalcComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('SVG', SVG);
   }
 
   init() {
